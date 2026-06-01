@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contatti e prenotazioni per il viaggio di istruzione in Croazia" />
+  <title>Viaggio in Croazia — Contatti</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <style>
+    .contact-info-card {
+      background: var(--bianco);
+      border-radius: var(--raggio-grande);
+      padding: 2rem;
+      box-shadow: var(--ombra-leggera);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform var(--transizione);
+    }
+    .contact-info-card:hover { transform: translateY(-4px); }
+    .contact-icon {
+      width: 50px; height: 50px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--azzurro-mare), var(--blu-adriatico));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .contact-text h4 { color: var(--blu-adriatico); margin-bottom: 0.2rem; }
+    .contact-text p, .contact-text a {
+      color: var(--testo-grigio);
+      font-size: 0.95rem;
+    }
+    .contact-text a:hover { color: var(--azzurro-mare); }
+
+    .success-msg {
+      display: none;
+      background: rgba(40,167,69,0.1);
+      border-left: 4px solid #28a745;
+      border-radius: 0 var(--raggio) var(--raggio) 0;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+      color: #1a7a30;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <header>
+    <nav class="navbar">
+      <a href="../HTML/index.html" class="logo"> <span>Croazia</span> 2026</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../HTML/index.html" class="active">Home</a></li>
+        <li><a href="../HTML/destinazione.html">Destinazione</a></li>
+        <li><a href="../HTML/programma.html">Programma</a></li>
+        <li><a href="../HTML/galleria.html">Galleria</a></li>
+        <li><a href="../HTML/costi.html">Costi</a></li>
+        <li><a href="../HTML/contatti.html">Contatti</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <div class="page-hero">
+    <span class="tag">✉️ Scrivici</span>
+    <h1>Contatti & Prenotazioni</h1>
+    <p>Hai domande sul viaggio? Compila il modulo o contatta direttamente i referenti</p>
+  </div>
+
+
+  <section style="background: var(--sabbia);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1.8fr; gap: 3rem; align-items: start;">
+
+      
+        <div>
+          <div class="section-header" style="text-align:left;">
+            <span class="tag" style="display:inline-block; background:rgba(26,139,191,0.1); color:var(--azzurro-mare); font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:0.3rem 1rem; border-radius:50px; margin-bottom:0.75rem;">Riferimenti</span>
+            <h2 style="color:var(--blu-adriatico);">Come contattarci</h2>
+            <div class="divider" style="margin:1rem 0 0;"></div>
+          </div>
+          <br>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+            <div class="contact-info-card">
+              <div class="contact-icon">👩‍🏫</div>
+              <div class="contact-text">
+                <h4>Docente referente</h4>
+                <p>Prof.ssa [Lorenza Inverso]<br>
+                   <a href="#">l.inverso@feltrionline.it</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">🏫</div>
+              <div class="contact-text">
+                <h4>Istituto scolastico</h4>
+                <p>[ITIS feltrinelli]<br>[Piazza Tito Lucrezio Caro 10, Milano]</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">📞</div>
+              <div class="contact-text">
+                <h4>Telefono scuola</h4>
+                <p><a href="tel:+39000000000">+39 02 8376741</a><br>
+                   Orari: lun–ven, 8:00–14:00</p>
+              </div>
+            </div>
+
+      
+          </div>
+        </div>
+
+        
+        <div class="form-section">
+          <h3 style="color:var(--blu-adriatico); margin-bottom:0.4rem; font-family:'Playfair Display',serif;">Modulo informazioni</h3>
+          <p style="margin-bottom:1.75rem; font-size:0.9rem;">Compila il modulo per richiedere informazioni o comunicare disponibilità. I campi con * sono obbligatori.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required />
+              </div>
+
+              <div class="form-group">
+                <label for="cognome">Cognome *</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="nome@esempio.it" required />
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+39 000 0000000" />
+              </div>
+
+              <div class="form-group full">
+                <label for="classe">Classe / Ruolo</label>
+                <select id="classe" name="classe">
+                  <option value="">Seleziona...</option>
+                  <option value="studente">Studente partecipante</option>
+                  <option value="genitore">Genitore / tutore</option>
+                  <option value="docente">Docente</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="oggetto">Oggetto *</label>
+                <select id="oggetto" name="oggetto" required>
+                  <option value="">Seleziona un argomento...</option>
+                  <option value="info-generali">Informazioni generali sul viaggio</option>
+                  <option value="costi">Costi e modalità di pagamento</option>
+                  <option value="documenti">Documenti necessari</option>
+                  <option value="programma">Programma e attività</option>
+                  <option value="alloggio">Alloggio e sistemazione</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="messaggio">Messaggio *</label>
+                <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui la tua domanda o comunicazione..." required></textarea>
+                <span class="form-note">Minimo 20 caratteri. Fornisci quanti più dettagli possibile.</span>
+              </div>
+
+              <div class="form-group full">
+                <label style="display:flex; align-items:flex-start; gap:0.6rem; cursor:pointer; font-weight:400; color:var(--testo-grigio);">
+                  <input type="checkbox" id="privacy" name="privacy" required style="width:auto; margin-top:3px; flex-shrink:0;" />
+                  <span>Ho letto e accetto l'<a href="#" style="color:var(--azzurro-mare);">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali per rispondere alla mia richiesta. *</span>
+                </label>
+              </div>
+
+            </div>
+
+            <div style="margin-top:1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <button type="submit" class="btn btn-primary">📨 Invia il modulo</button>
+              <button type="reset" class="btn btn-outline" style="border-color:var(--testo-grigio); color:var(--testo-grigio);">🔄 Cancella</button>
+            </div>
+
+          </form>
+
+          <div class="success-msg" id="successMsg">
+            ✅ Grazie! Il tuo messaggio è stato inviato correttamente. Ti risponderemo al più presto.
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section style="background: white;">
+    <div class="container" style="max-width:800px;">
+      <div class="section-header">
+        <span class="tag">FAQ</span>
+        <h2>Domande frequenti</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;" id="faqContainer">
+
+        <details style="background:var(--sabbia); border-radius:var(--raggio); padding:1.25rem 1.5rem; cursor:pointer;">
+          <summary style="font-weight:700; color:var(--blu-adriatico); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            Quali documenti devo portare?
+            <span>﹢</span>
+          </summary>
+          <p style="margin-top:0.75rem;">È sufficiente la carta d'identità valida per l'espatrio. Ricordati anche la Tessera Sanitaria Europea (TEAM). Porta fotocopie di entrambi i documenti conservate separatamente.</p>
+        </details>
+
+        <details style="background:var(--sabbia); border-radius:var(--raggio); padding:1.25rem 1.5rem; cursor:pointer;">
+          <summary style="font-weight:700; color:var(--blu-adriatico); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            Quanto denaro contante portare?
+            <span>﹢</span>
+          </summary>
+          <p style="margin-top:0.75rem;">La Croazia usa l'Euro. Per i pranzi liberi (circa €15/giorno) e souvenir, si consiglia un budget di €100–€150 per 5 giorni. Le carte di credito/debito sono accettate quasi ovunque.</p>
+        </details>
+
+        <details style="background:var(--sabbia); border-radius:var(--raggio); padding:1.25rem 1.5rem; cursor:pointer;">
+          <summary style="font-weight:700; color:var(--blu-adriatico); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            Posso usare il cellulare senza costi aggiuntivi?
+            <span>﹢</span>
+          </summary>
+          <p style="margin-top:0.75rem;">Sì! La Croazia è nell'Unione Europea, quindi il roaming è gratuito con qualsiasi SIM italiana. Puoi navigare e chiamare normalmente.</p>
+        </details>
+
+        <details style="background:var(--sabbia); border-radius:var(--raggio); padding:1.25rem 1.5rem; cursor:pointer;">
+          <summary style="font-weight:700; color:var(--blu-adriatico); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            Cosa metto in valigia?
+            <span>﹢</span>
+          </summary>
+          <p style="margin-top:0.75rem;">Abbigliamento comodo e a strati, scarpe da trekking per Plitvice, sandali per la costa, crema solare, cappello. Aggiungi qui eventuali indicazioni specifiche dell'organizzazione.</p>
+        </details>
+
+        <details style="background:var(--sabbia); border-radius:var(--raggio); padding:1.25rem 1.5rem; cursor:pointer;">
+          <summary style="font-weight:700; color:var(--blu-adriatico); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+            Aggiungi un'altra domanda...
+            <span>﹢</span>
+          </summary>
+          <p style="margin-top:0.75rem;">Sostituisci questo testo con la risposta alla domanda frequente che vuoi aggiungere. Puoi duplicare il blocco &lt;details&gt; quante volte vuoi.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span>Croazia</span> 2026</div>
+        <p style="font-size:0.9rem; max-width:300px;">Viaggio di istruzione organizzato dalla scuola-ITIS Feltrinelli 3^F.</p>
+      </div>
+      <div>
+        <h4>Pagine</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinazione.html">Destinazione</a></li>
+          <li><a href="programma.html">Programma</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="costi.html">Costi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Info Utili</h4>
+        <ul class="footer-links">
+          <li><a href="#">Documenti necessari</a></li>
+          <li><a href="#">Cosa portare</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Viaggio di Istruzione in Croazia — Progetto scolastico HTML/CSS</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Form submit demo
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome     = document.getElementById('nome').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const messaggio= document.getElementById('messaggio').value.trim();
+      const privacy  = document.getElementById('privacy').checked;
+
+      if (!nome || !email || !messaggio || !privacy) {
+        alert('Per favore compila tutti i campi obbligatori e accetta la privacy policy.');
+        return;
+      }
+      if (messaggio.length < 20) {
+        alert('Il messaggio è troppo breve. Scrivi almeno 20 caratteri.');
+        return;
+      }
+
+      this.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
+
+    // FAQ toggle icon
+    document.querySelectorAll('details').forEach(detail => {
+      const summary = detail.querySelector('summary');
+      const icon    = summary.querySelector('span');
+      detail.addEventListener('toggle', () => {
+        icon.textContent = detail.open ? '﹣' : '﹢';
+      });
+    });
+
+    // Responsive contatti: stack colonne su mobile
+    const contactLayout = document.querySelector('.container > div[style*="grid-template-columns"]');
+    function checkLayout() {
+      if (contactLayout) {
+        if (window.innerWidth < 800) {
+          contactLayout.style.gridTemplateColumns = '1fr';
+        } else {
+          contactLayout.style.gridTemplateColumns = '1fr 1.8fr';
+        }
+      }
+    }
+    window.addEventListener('resize', checkLayout);
+    checkLayout();
+  </script>
+</body>
+</html>
